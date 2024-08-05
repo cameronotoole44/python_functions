@@ -11,18 +11,22 @@ print(max_num(347825646, 392487652348975, 44))
 # Write a Python function called mult_list() to multiply all the numbers in a list.
 
 def mult_list(numbers):
-    # is list empty
-    if len(numbers) == 0:
-        return 0
 
-    result = 1
-    for num in numbers:
-       result *= num
-    return result 
+  if len(numbers) == 0:
+    return 0
 
-numbers = [4,8,12]
-product = mult_list(numbers)
-print("Product of numbers:", product)
+  prod = numbers[0]
+
+
+  if len(numbers) > 1:
+    for i in numbers[1:]:
+      prod = prod * i
+
+  return prod
+    
+print(mult_list([1,2,3]))
+print(mult_list([]))
+print(mult_list([15]))
 
 
 
@@ -75,7 +79,7 @@ def pascal(num):
 #         #first number is 1
 #         if i == 0:
 #           row.append(1)
-#         #intermediate nunmbers get added from previous rows
+#         #intermediate numbers get added from previous rows
 #         elif i > 0 and i < length-1:
 #           row.append(triangle[row_number-1][i-1]+triangle[row_number-1][i])
 #         #last number is 1
